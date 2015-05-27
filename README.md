@@ -143,7 +143,7 @@ Turn on one tyoe of checking by setting the cop to 'Enabled: true'
 ```
   $ rubo.todo.cop
 ```
-Examine the output carefully. If you need to, check the style guide for help. (Ref. 1)
+Examine the output carefully. If you need to, check the style guide for help. (Ref. 2)
 3. Edit your source.
 ```
   # One way to do this:

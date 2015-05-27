@@ -14,7 +14,7 @@ Rubocop to check that things adhere to a Ruby Style Sheet. (Ref: 1), (Ref: 2).
 # Preflight Checklist:
 1. Vreate a new feature branch for this.
 ```
-  $ git flow feature start rubocop.tidy
+  $ git flow feature start rubocop.tidyup
 ```
 
 
@@ -180,6 +180,9 @@ Then you may wnat to add Rubocop to your specs Rakefile. See Ref 1. on how Ruboc
 ```
 # Brown Field Projects
 If you have a legacy project with no or incomplete tests, you won't have the safety net of running your specs. You might consider adding some tests and test 
+```
+  $ git flow feature finish rubocop.tidyup
+```
 doubles before you start on a Rubocop adventure. However, if reading the code is a
 chore, then use Rubocop to at least get the code some nicer state before adding a lot of tests.
 Note: See my repo: filemockery_minitest for some useful hints and 

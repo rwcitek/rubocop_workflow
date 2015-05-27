@@ -1,0 +1,6 @@
+alias rubo.correct='rubocop -a'
+alias rubo.offenses='rubocop --format offenses'
+alias rubo.simple='rubocop --format simple'
+alias rubo.todo.cop='rubocop --config ./.rubocop_todo.yml'
+alias rubo.todo.cop.files='rubo.todo.cop --format files 2>/dev/null'
+alias rubo.todo.edit='$EDITOR .rubocop_todo.yml'

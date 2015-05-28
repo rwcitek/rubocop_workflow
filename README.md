@@ -4,6 +4,7 @@ Note: The rest of this document assumes you are using the Bash aliases found in 
   $ source rubocop.aliases
 ```
 Using Rubocop (Ruby Cop) with testing and git.
+
 # Prelude
 A place to document what I use to clean up mt Ruby code. I use 3 tools in this : 
 git and git flow to have confidence in what I mangle.
@@ -133,6 +134,7 @@ Inspecting 34 files
 
 34 files inspected, no offenses detected
 ```
+
 # Main Workflo
 1. Edit TODO list.
 ```

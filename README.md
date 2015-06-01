@@ -17,93 +17,75 @@ Rubocop to check that things adhere to a Ruby Style Sheet. (Ref: 1), (Ref: 2).
 # Preflight Checklist:
 1. Create a new feature branch for this.
 
-```
-    $ git flow feature start rubocop.tidyup
-```
+        $ git flow feature start rubocop.tidyup
 
 2. Installation
-Install Rubocop on your system.
 
-```
-    $ sudo gem install rubocop
-```
+    Install Rubocop on your system.
 
-Or it you have a Gemfile (recommended):
+        $ sudo gem install rubocop
 
-```
-    # add to your Gemfile:
-    gem 'rubocop', require: false
-    
-    # then:
-    $ bundle
-```
+    Or if you have a Gemfile (recommended):
+
+        # add to your Gemfile:
+        gem 'rubocop', require: false
+        
+        # then:
+        $ bundle
 
 3. Run your tests furst.
 
-```
-    $ cd ./specs
-    $ rake
-```
+        $ cd ./specs
+        $ rake
 
-4. Initial  rubocop run.
+4. Initial rubocop run.
 
-```
-    $ rubo.simple
-```
+        $ rubo.simple
 
-This should produce a lot of output with a summary like:
+    This should produce a lot of output with a summary like:
 
-```
-    .
-    C: 83:  8: Align the parameters of a method call if they span more than one line.
-    == lib/tasks/config.rb ==
-    C:  4:  1: Missing top-level class documentation comment.
-    
-    34 files inspected, 590 offenses detected
-```
-DO NOT PANIC!
+        .
+        C: 83:  8: Align the parameters of a method call if they span more than one line.
+        == lib/tasks/config.rb ==
+        C:  4:  1: Missing top-level class documentation comment.
+        
+        34 files inspected, 590 offenses detected
 
-This is probably expected. In the output above you should see lines beginning with 
+    DO NOT PANIC!
 
-'C' - Style Guide exceptions.
-'W' - Lint-like warnings
-'E' - Errors (syntax?).
+    This is probably expected. In the output above you should see lines beginning with 
 
-the vast bulk of these will probably be 'C' exceptions.
+    * 'C' - Style Guide exceptions
+    * 'W' - Lint-like warnings
+    * 'E' - Errors (syntax?)
 
-5. check ot see if any files can be excluded from rubocop.
-Sometimes you may source from another project embedded within your source tree. Obeying the NTOPC rule (Never Test Other People's Code): You can exclude these files or directories in the Rubocop configuration file.
+    the vast bulk of these will probably be 'C' exceptions.
 
-```
-    # in ./.rubocop.yml
-    AllCops:
-        Exclude:
-        - 'build/pdf*/**'
-        - 'templates/**'
-```
+5. Check ot see if any files can be excluded from rubocop.
 
-Now repeat step 4. At least now you are only seeing legitiment warnings from your code.
+    Sometimes you may source from another project embedded within your source tree. Obeying the NTOPC rule (Never Test Other People's Code): You can exclude these files or directories in the Rubocop configuration file.
+
+        # in ./.rubocop.yml
+        AllCops:
+            Exclude:
+            - 'build/pdf*/**'
+            - 'templates/**'
+
+    Now repeat step 4. At least now you are only seeing legitiment warnings from your code.
 
 6. Get a summary of where your offenses are of what type.
 
-```
-    $ rubo.offenses
-    
-    
-    19  Style/Documentation
-    12  Metrics/LineLength
-     2   Style/AlignParameters
-     1   Metrics/MethodLength
-    --
-    
-    34  Total
-```
-Now if you see any lint warnings, then attact them first.
+        $ rubo.offenses
+        
+        19  Style/Documentation
+        12  Metrics/LineLength
+            2   Style/AlignParameters
+            1   Metrics/MethodLength
+        --
+        
+        34  Total
 
-
-
-
-```
+        Now if you see any lint warnings, then attact them first.
 
 
 

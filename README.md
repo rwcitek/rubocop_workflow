@@ -157,31 +157,28 @@ You may not kike all of its decisions.
 # End of workflow
 Some final thoughts.  When you have cleanedup all offenses, and committed to git, you may have seen some refactoring steps you could also do. Rubocop forces you to think ways to removed the offending subsets of code by reorganizing or refactoring. Remember refactoring should not change or add any ofyour test code. After each refactor process, rerun your specs and rerun rubocop.
 
-      $ (cd ./specs; rake)
-      # fix, then
-      $ rubocop
+        $ (cd ./specs; rake)
+        # fix, then
+        $ rubocop
 
 Note: The last step above is just running Rubocop with the usual config yaml file.
 
-# Automating Cops
+# Post-flight check
+Once you have a clean code base, you may want to merge that feature branch into develop branch.  
 
-    Once you have a clean code base, you may want to merge that feature branch into develop branch. 
-    Then you may wnat to add Rubocop to your specs Rakefile. See Ref 1. on how Rubocop integrates with Rake.
+        $ git flow feature finish rubocop.tidyup
+
+# Automating Cops
+Then you may want to add Rubocop to your specs Rakefile. See Ref 1. on how Rubocop integrates with Rake.
 
         $ cd ./specs
         $ rake cops
         $ Consider making that task depend on the 'test' task.
 
 # Brown Field Projects
-If you have a legacy project with no or incomplete tests, you won't have the safety net of running your specs. You might consider adding some tests and test 
+If you have a legacy project with no or incomplete tests, you won't have the safety net of running your specs. You might consider adding some tests and test doubles before you start on a Rubocop adventure. However, if reading the code is a chore, then use Rubocop to at least get the code into some nicer state before adding a lot of tests.
 
-        $ git flow feature finish rubocop.tidyup
-
-doubles before you start on a Rubocop adventure. However, if reading the code is a
-chore, then use Rubocop to at least get the code some nicer state before adding a lot of tests.
-
-Note: See my repo: filemockery_minitest for some useful hints and 
-supporting code for File mocks and stubs.
+Note: See my repo: filemockery_minitest for some useful hints and supporting code for File mocks and stubs.
 
 # References
 1. Rubocop : https://github.com/bbatsov/rubocop/blob/master/README.md#installation
